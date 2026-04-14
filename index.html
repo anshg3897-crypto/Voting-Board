@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notevo — Feature Requests</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <span class="logo">📝 Notevo</span>
+      <a href="#" class="nav-link active">💡 Feature Requests</a>
+      <a href="#" class="nav-link">🗺️ Roadmap</a>
+      <a href="#" class="nav-link">📋 Changelog</a>
+    </div>
+    <div class="nav-right">
+      <div class="avatar">U</div>
+    </div>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <main class="layout">
+
+    <!-- LEFT: FORM -->
+    <aside class="form-panel">
+      <p class="form-intro">Got a feature you'd like added? Fill up the form below!</p>
+
+      <div class="form-group">
+        <label for="feat-title">Title</label>
+        <input type="text" id="feat-title" placeholder="Input title here" maxlength="80" />
+      </div>
+
+      <div class="form-group">
+        <label for="feat-desc">Description</label>
+        <textarea id="feat-desc" placeholder="Input description here" rows="5"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="feat-tag">Tag (optional)</label>
+        <select id="feat-tag">
+          <option value="">Select...</option>
+          <option value="Enhancement">Enhancement</option>
+          <option value="Bug">Bug</option>
+          <option value="New Feature">New Feature</option>
+          <option value="Performance">Performance</option>
+          <option value="UI/UX">UI/UX</option>
+        </select>
+      </div>
+
+      <button class="submit-btn" id="submitBtn" onclick="submitFeature()">Submit</button>
+      <p class="error-msg" id="errorMsg"></p>
+    </aside>
+
+    <!-- RIGHT: FEATURE LIST -->
+    <section class="board">
+      <div class="board-header">
+        <div class="filter-group">
+          <span class="filter-label">Status:</span>
+          <select id="statusFilter" onchange="renderFeatures()">
+            <option value="all">All</option>
+            <option value="Under Review">Under Review</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Planned">Planned</option>
+          </select>
+        </div>
+        <span class="sort-note">Sorted by most votes</span>
+      </div>
+
+      <div id="featureList"></div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
